@@ -1,0 +1,16 @@
+html {
+    box-sizing: border-box;
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+button {
+    font-family: inherit;
+}
