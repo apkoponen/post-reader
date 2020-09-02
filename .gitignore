@@ -1,0 +1,9 @@
+.env
+.DS_Store
+.idea
+.next
+node_modules
+.vagrant
+cypress/videos/*
+cypress/screenshots/*
+/coverage/*
