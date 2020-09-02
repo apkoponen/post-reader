@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
 function CustomNextApp({ Component, pageProps }: AppProps): JSX.Element {
+  // We track if we've mounted the component in order to skip SSR, as we do not currently need it for the app
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   return (
     <>
       <Head>
@@ -11,7 +14,7 @@ function CustomNextApp({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      {mounted && <Component {...pageProps} />}
     </>
   );
 }
