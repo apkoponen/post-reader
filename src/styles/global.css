@@ -3,6 +3,7 @@ html {
     -webkit-font-kerning: normal;
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
+    font-family: 'Public Sans', sans-serif;
 }
 
 *,
