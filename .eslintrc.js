@@ -221,6 +221,9 @@ module.exports = {
 
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
+
+    // Disable the rule, because it does not work well with React components
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   overrides: [
     {
