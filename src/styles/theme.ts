@@ -14,4 +14,5 @@ export const color = {
   brandLight: '#fbe2d6',
   white: '#fff',
   disabled: '#333',
+  dark: '#000',
 };

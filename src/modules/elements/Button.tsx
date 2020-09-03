@@ -1,12 +1,14 @@
 import React from 'react';
 import { borderRadius, color, spacing } from '../../styles/theme';
 
-const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
-  children,
-  ...rest
-}) => {
+type ButtonVariant = 'dark' | 'brand';
+
+const Button: React.FC<
+  { variant?: ButtonVariant } & React.ButtonHTMLAttributes<HTMLButtonElement>
+> = ({ variant, children, className, ...rest }) => {
+  variant = variant || 'brand';
   return (
-    <button {...rest}>
+    <button className={`${className || ''} ${variant}`} {...rest}>
       {children}
       {/*language=CSS*/}
       <style jsx>{`
@@ -20,6 +22,10 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
 
         button:disabled {
           background: ${color.disabled};
+        }
+
+        button.dark {
+          background: ${color.dark};
         }
       `}</style>
     </button>
