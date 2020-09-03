@@ -24,7 +24,9 @@
   "private": true,
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
     "confusing-browser-globals": "^1.0.9",
+    "formik": "^2.1.5",
     "next": "^9.5.2",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",

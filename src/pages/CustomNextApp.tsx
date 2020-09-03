@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import AuthServiceProvider from '../modules/auth/AuthServiceProvider';
 
 function CustomNextApp({ Component, pageProps }: AppProps): JSX.Element {
   // We track if we've mounted the component in order to skip SSR, as we do not currently need it for the app
@@ -14,7 +15,11 @@ function CustomNextApp({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
         />
       </Head>
-      {mounted && <Component {...pageProps} />}
+      {mounted && (
+        <AuthServiceProvider>
+          <Component {...pageProps} />
+        </AuthServiceProvider>
+      )}
     </>
   );
 }
