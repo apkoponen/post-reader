@@ -15,6 +15,7 @@ export const testIds = {
   nameField: 'name-field',
   submitButton: 'submit-button',
   unexpectedError: 'unexpected-error',
+  reauthorization: 'reauthorization',
 };
 
 interface FormData {
@@ -24,7 +25,7 @@ interface FormData {
 
 const LoginForm = () => {
   const [hasUnexpectedError, setHasUnexpectedError] = useState<boolean>(false);
-  const { register } = useAuth();
+  const { register, isReauthorization } = useAuth();
   return (
     <Formik
       initialValues={{
@@ -49,6 +50,11 @@ const LoginForm = () => {
     >
       {({ isSubmitting }) => (
         <Form data-e2e={e2eIds.loginForm}>
+          {isReauthorization && (
+            <div data-testid={testIds.reauthorization}>
+              Your session expired. Please register again.
+            </div>
+          )}
           {hasUnexpectedError && (
             <div data-testid={testIds.unexpectedError}>
               An unexpected error happened.

@@ -27,16 +27,19 @@
     "axios": "^0.20.0",
     "confusing-browser-globals": "^1.0.9",
     "formik": "^2.1.5",
+    "lodash.groupby": "^4.6.0",
     "next": "^9.5.2",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "swr": "^0.3.2"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.4.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@types/jest": "^26.0.12",
+    "@types/lodash.groupby": "^4.6.6",
     "@types/nock": "^11.1.0",
     "@types/node": "^14.6.2",
     "@types/react": "^16.9.49",
